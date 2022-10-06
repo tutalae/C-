@@ -1,0 +1,21 @@
+class Solution {
+public:
+bool isPalindrome(int x) {
+// negative numbers arent palindromes
+if(x<0) return false;
+
+//  int is too small
+long int mirror = 0;
+int temp = x;
+
+// setting up the mirrored version of x
+for (; temp != 0; temp/=10) {
+	int last = temp % 10;
+	mirror = mirror * 10 + last;
+    }
+    if (x != mirror){
+        return 0;
+    } else { 
+        return 1;
+        }
+}};
